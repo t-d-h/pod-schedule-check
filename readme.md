@@ -22,3 +22,18 @@ This tool helps **debug and explain why a specific Kubernetes Pod is not schedul
 - Required Python packages:
   ```bash
   pip install kubernetes pytz urllib3
+  ```
+## Usage
+```
+$ pod-schedule-check -n <namespace> <pod name>
+
+Scheduling Analysis for Pod: my-deployment-5c6c5d74bb-xyz (Namespace: default)
+
+NODE                                     REASONS
+================================================================================
+node-1                                  ✓ Schedulable
+node-2                                  InsufficientCPU, NodeAffinityMismatch
+node-3                                  PodAntiAffinityMismatch
+```
+
+That's it .
